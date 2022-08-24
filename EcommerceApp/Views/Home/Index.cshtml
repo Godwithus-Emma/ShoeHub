@@ -1,0 +1,189 @@
+﻿
+@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div id="ads-wrapper">
+    <div class="cover">
+        <div>
+            <h3>Super Flash Sale <br />50% Off</h3>
+        </div>
+    </div>
+    <div class="ads flex">
+        @{
+            var featured = Model.featured;
+            for (int i = 0; i < featured.Count; i++)
+            {
+                if (i == 0)
+                {
+                <div class="wrap first">
+                    <a asp-controller="ProductDetails" asp-action="Index" asp-route-Id="@featured[i].ProductId">
+                    <img src=@featured[i].ImgaeUrl />
+                    <h4 class="category">@featured[i].ProductCategory</h4>
+                    <h4 class="name">@featured[i].ProdutcName</h4>
+                    <div class="discount"><span class="fade">$@featured[i].InitialPrice</span> <h3>@featured[i].Discount% Off</h3></div>
+                    <h4 class="current-price">$@featured[i].CurrentPrice</h4>
+                    </a>
+                </div>
+                }
+                if (i == 1)
+                {
+                    <div class="wrap second">
+                        <a asp-controller="ProductDetails" asp-action="Index" asp-route-Id="@featured[i].ProductId">
+                            <img src=@featured[i].ImgaeUrl />
+                            <div class="flex split">
+                                <div>
+                                    <h4 class="category">@featured[i].ProductCategory</h4>
+                                    <h4 class="name">@featured[i].ProdutcName...</h4>
+                                </div>
+                                <div id="current-price"><h4 class="current-price">$@featured[i].CurrentPrice</h4></div>
+                            </div>
+                            <div class="discount"><span class="fade">$@featured[i].InitialPrice</span> <h3>@featured[i].Discount% Off</h3></div>
+                        </a>
+                    </div>
+                }
+                if (i == 2)
+                {
+                    <div class="wrap third">
+                            <a asp-controller="ProductDetails" asp-action="Index" asp-route-Id="@featured[i].ProductId">
+                        <img src=@featured[i].ImgaeUrl />
+                        <h4 class="category">@featured[i].ProductCategory</h4>
+                        <h4 class="name">@featured[i].ProdutcName...</h4>
+                        <div class="discount"><span class="fade">$@featured[i].InitialPrice</span> <h3>@featured[i].Discount% Off</h3></div>
+                        <h4 class="current-price">$@featured[i].CurrentPrice</h4>
+                                </a>
+                    </div>
+                }
+            }
+        }
+    </div>
+    <div id="category-wrapper">
+        <h1 class="best-seller">BEST SELLER</h1>
+        <div class="categories">
+            <ul class="heading flex">
+                <li class="active">All</li>
+                <li>Bages</li>
+                <li>Sneakers</li>
+                <li>Belt</li>
+                <li>Sunglasses</li>
+            </ul>
+        </div>
+
+        <div class="row">
+            @{
+                var all = Model.products;
+                for (int i = 1; i < all.Count; i++)
+                {
+            <div style="" class="row-wrap mgb-10 mgt-10 class_@i ">
+                <a asp-controller="ProductDetails" asp-action="Index" asp-route-Id="@all[i].ProductId">
+                    <img class="layer" src="@all[i].ImgaeUrl" />
+                    @if (i == 1)
+                    {<span class="flag">Hot</span>}
+                    <div class="review">
+                        <h3>@all[i].ProdutcName</h3>
+                        <div class="rating">
+                            @{
+                                int count = 5;
+                                int rate = (int)all[i].ProductRating;
+                                while (count > 0)
+                                {
+                                    if (rate > 0)
+                                    {
+                                        <img src="~/images/star-yellow.png" />
+                                        rate--;
+                                    }
+                                    else
+                                    {
+                                        <img src="~/images/star.png" />
+                                    }
+                                    count--;
+                                }
+                            }
+                        </div>
+                        <div class="pricing">
+                            <h3 class="current-price mgr-10">$@all[i].CurrentPrice</h3>
+                            <div class="discount"><span class="fade mgr-10">$@all[i].InitialPrice</span> <h3>@all[i].Discount% Off</h3></div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            }
+        }      
+        </div>
+    </div>
+    <h2 class="more mgt-10">LOAD MORE</h2>
+    <div class="showoff flex">
+        <div class="details ">
+            <h2>
+                Adidas Men Running <br />
+                Sneakers
+            </h2>
+            <p>Performance and design. Taken right to the edge.</p>
+            <span>SHOP NOW</span>
+        </div>
+        <img src="~/images/shoe.png" /> 
+    </div>
+    <div class="service-row flex">
+        <div class="ctr-1">
+            <img src="~/images/shipping.png" />
+            <h2>FREE SHIPPING</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="ctr-1">
+            <img src="~/images/shipping.png" />
+            <h2>FREE SHIPPING</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="ctr-1">
+            <img src="~/images/shipping.png" />
+            <h2>FREE SHIPPING</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+    </div>
+    <h2 class="news-t">LATEST NEWS</h2>
+    <div class="news flex">
+        @for (int i = 0; i < 3; i++)
+        {
+        <div class="news-crt-1 flex">
+            <div class="ctp"> <img src="~/images/nike.png" /> </div>
+            <div>
+                <p class="fade">01 Jan, 2015</p>
+                <h3>Fashion Industry</h3>
+                <p class="nnt">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+        </div>
+        }
+    </div>
+    <h2 class="f-products">FEATURED PRODUCTS</h2>
+    <div class="products flex">
+        @for (int i = 0; i < 3; i++)
+            {
+        <div class="product-crt flex">
+            <div> <img src="~/images/tennis.png" /> </div>
+            <div class="crt">
+                <p>Blue Swade Nike <br />Sneakers</p>
+                <div class="rating">
+                    @for (int j = 0; j < 5; j++)
+                    {
+                        if (i == 4)
+                        {
+                            <img src="~/images/star.png" />
+                        }
+                        else
+                        {
+                            <img src="~/images/star-yellow.png" />
+                        }
+                    }
+                </div>
+                <p class="cur-p">$499</p> <span class="fade">599</span>
+            </div>
+        </div>
+        }
+    </div>
+    <div class="search flex">
+        <input class="" placeholder="Search query..." />
+        <button>Search</button>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+{"ProductId":2,"ProdutcName":"Nike","CurrentPrice":990.0,"InitialPrice":100.0,"Discount":20.0,"ImgaeUrl":"/images/product-2.png","ProductCategory":2,"ProductRating":2}
+{"ProductId":6,"ProdutcName":"Spoon","CurrentPrice":992.0,"InitialPrice":100.0,"Discount":20.0,"ImgaeUrl":"/images/product-6.png","ProductCategory":3,"ProductRating":3}
+{"ProductId":2,"ProdutcName":"Fan","CurrentPrice":5463334.0,"InitialPrice":100.0,"Discount":20.0,"ImgaeUrl":"/images/product-2.png","ProductCategory":2,"ProductRating":5}
+{"ProductId":5,"ProdutcName":"Ms-Ts","CurrentPrice":34424546.0,"InitialPrice":100.0,"Discount":20.0,"ImgaeUrl":"/images/product-5.png","ProductCategory":1,"ProductRating":1}
+{"ProductId":6,"ProdutcName":"Geff","CurrentPrice":24242.0,"InitialPrice":100.0,"Discount":20.0,"ImgaeUrl":"/images/product-6.png","ProductCategory":3,"ProductRating":3}
+{"ProductId":7,"ProdutcName":"Polish","CurrentPrice":4356.0,"InitialPrice":100.0,"Discount":20.0,"ImgaeUrl":"/images/product-7.png","ProductCategory":1,"ProductRating":4}
+{"ProductId":5,"ProdutcName":"adelab","CurrentPrice":3546.0,"InitialPrice":100.0,"Discount":20.0,"ImgaeUrl":"/images/product-5.png","ProductCategory":3,"ProductRating":3}
+{"ProductId":5,"ProdutcName":"Kolib","CurrentPrice":5464.0,"InitialPrice":100.0,"Discount":20.0,"ImgaeUrl":"/images/product-5.png","ProductCategory":2,"ProductRating":2}
+{
+  "ProductId": 7,
+  "ProdutcName": "Keatol",
+  "CurrentPrice": 45645.0,
+  "InitialPrice": 100.0,
+  "Discount": 20.0,
+  "ImgaeUrl": "/images/product-7.png",
+  "ProductCategory": 1,
+  "ProductRating": 5
+}
